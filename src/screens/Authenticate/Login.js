@@ -21,7 +21,7 @@ const Login = () => {
         <KeyboardAvoidingView
           style={style.loginBody}
           behavior={Platform.OS === "ios" ? "padding" : "height"}
-          keyboardVerticalOffset={10}
+          // keyboardVerticalOffset={60}
         >
           <View style={style.loginBodyImage}>
             <Image source={require("../../../assets/LogoShop.png")} />
