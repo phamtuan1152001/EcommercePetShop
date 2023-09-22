@@ -5,13 +5,14 @@ export const style = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    gap: 15,
+    // gap: 15,
   },
   loginBodyCenterBoxTitle: {
     color: "#888888",
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 18,
+    marginBottom: 10,
   },
   loginBodyCenterBoxInput: {
     fontWeight: "400",

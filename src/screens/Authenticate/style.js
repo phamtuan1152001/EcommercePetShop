@@ -29,7 +29,7 @@ export const style = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    gap: 20,
+    gap: 10,
     width: "100%",
     paddingHorizontal: 25,
   },

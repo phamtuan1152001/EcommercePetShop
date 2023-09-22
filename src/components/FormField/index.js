@@ -18,7 +18,9 @@ const FormField = ({
   const error = errors[field];
   const touch = touched[field];
 
-  const ErrorField = error && <Text style={{ color: "red" }}>{error}</Text>;
+  const ErrorField = error && (
+    <Text style={{ color: "red", paddingTop: 10 }}>{error}</Text>
+  );
 
   return (
     <View style={style.loginBodyCenterBox}>
