@@ -1,7 +1,9 @@
+// @style
+import { style } from "./style";
+
 import React from "react";
 import {
   Text,
-  TextInput,
   View,
   TouchableOpacity,
   Pressable,
@@ -10,9 +12,11 @@ import {
   Keyboard,
   Image,
 } from "react-native";
+import { Formik } from "formik";
+import { validationSchema } from "./validation";
 
-// @style
-import { style } from "./style";
+// @components
+import FormField from "../../components/FormField";
 
 const Login = () => {
   return (
@@ -26,41 +30,53 @@ const Login = () => {
           <View style={style.loginBodyImage}>
             <Image source={require("../../../assets/LogoShop.png")} />
           </View>
-          <View style={style.loginBodyCenter}>
-            <View style={style.loginBodyCenterBox}>
-              <Text style={style.loginBodyCenterBoxTitle}>Email Address</Text>
-              <TextInput
-                style={style.loginBodyCenterBoxInput}
-                placeholder="Enter your email."
-              />
-            </View>
-            <View
-              style={style.loginBodyCenterBox}
-              behavior={Platform.OS === "ios" ? "padding" : "height"}
-              keyboardVerticalOffset={30}
-            >
-              <Text style={style.loginBodyCenterBoxTitle}>Password</Text>
-              <TextInput
-                style={style.loginBodyCenterBoxInput}
-                placeholder="Enter your password."
-              />
-            </View>
-            <View style={style.loginFooter}>
-              <TouchableOpacity style={style.loginFooterBtn}>
-                <Text style={style.loginFooterBtnTitle}>Sign In</Text>
-              </TouchableOpacity>
-              <View style={style.loginFooterRegister}>
-                <Text style={style.loginFooterRegisterTitle}>
-                  Don't have an account
-                </Text>
-                <Pressable onPress={() => console.log("hihi")}>
-                  <Text style={style.loginFooterRegisterDes}>
-                    Register here
-                  </Text>
-                </Pressable>
-              </View>
-            </View>
-          </View>
+          <Formik
+            initialValues={{ email: "" }}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {(formik) => {
+              return (
+                <View style={style.loginBodyCenter}>
+                  <FormField
+                    field={"email"}
+                    label={"Email Address"}
+                    placeholder={"Enter your email"}
+                    autoCapitalize={"none"}
+                    {...formik}
+                  />
+                  <FormField
+                    field={"password"}
+                    label={"Password"}
+                    placeholder={"Enter your password"}
+                    secureTextEntry={true}
+                    autoCapitalize={"none"}
+                    {...formik}
+                  />
+                  <View style={style.loginFooter}>
+                    <TouchableOpacity
+                      style={style.loginFooterBtn}
+                      onPress={() => formik.handleSubmit()}
+                    >
+                      <Text style={style.loginFooterBtnTitle}>Sign In</Text>
+                    </TouchableOpacity>
+                    <View style={style.loginFooterRegister}>
+                      <Text style={style.loginFooterRegisterTitle}>
+                        Don't have an account
+                      </Text>
+                      <Pressable onPress={() => console.log("hihi")}>
+                        <Text style={style.loginFooterRegisterDes}>
+                          Register here
+                        </Text>
+                      </Pressable>
+                    </View>
+                  </View>
+                </View>
+              );
+            }}
+          </Formik>
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
     </View>
