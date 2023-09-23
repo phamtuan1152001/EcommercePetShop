@@ -1,5 +1,5 @@
 // @style
-import { style } from "./style";
+import { style } from "../style";
 
 import React from "react";
 import {
@@ -15,16 +15,16 @@ import {
   Alert,
 } from "react-native";
 import { Formik } from "formik";
-import { validationSchema } from "./validation";
+import { validationSchema } from "../validation";
 
 // @components
-import FormField from "../../components/FormField";
+import FormField from "../../../components/FormField";
 
 // @service
-import { loginAuthenticate } from "./Store/service";
+import { loginAuthenticate } from "../Store/service";
 
 // @constants
-import { RETCODE_SUCCESS } from "../../constants";
+import { RETCODE_SUCCESS } from "../../../constants";
 
 const Login = () => {
   const [loading, setLoading] = React.useState(false);
@@ -62,7 +62,7 @@ const Login = () => {
           // keyboardVerticalOffset={60}
         >
           <View style={style.loginBodyImage}>
-            <Image source={require("../../../assets/LogoShop.png")} />
+            <Image source={require("../assets/image/LogoShop.png")} />
           </View>
           <Formik
             initialValues={{ email: "", password: "" }}
@@ -72,10 +72,10 @@ const Login = () => {
             }}
           >
             {(formik) => {
-              const { values, errors } = formik || {};
-              const hasErrors = Object.keys(errors).length > 0;
-              const hasValues = values;
-              setDisabled(hasErrors || !hasValues.email || !hasValues.password);
+              // const { values, errors } = formik || {};
+              // const hasErrors = Object.keys(errors).length > 0;
+              // const hasValues = values;
+              // setDisabled(hasErrors || !hasValues.email || !hasValues.password);
 
               return (
                 <View style={style.loginBodyCenter}>
@@ -98,7 +98,7 @@ const Login = () => {
                     <TouchableOpacity
                       style={style.loginFooterBtn}
                       onPress={() => formik.handleSubmit()}
-                      disabled={disabled}
+                      // disabled={disabled}
                     >
                       {loading ? (
                         <ActivityIndicator color="#ffff" size={"large"} />
