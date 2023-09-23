@@ -18,7 +18,27 @@ import { validationSchema } from "./validation";
 // @components
 import FormField from "../../components/FormField";
 
+// @service
+import { loginAuthenticate } from "./service";
+
 const Login = () => {
+  const [loading, setLoading] = React.useState(false);
+  React.useEffect(() => {
+    fetchLoginAuthenticate();
+  }, []);
+
+  const fetchLoginAuthenticate = async () => {
+    try {
+      setLoading(true);
+      const { data } = await loginAuthenticate({});
+      console.log("res", data);
+    } catch (err) {
+      console.log("FETCH FAIL!", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <View style={style.loginWrapper}>
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
