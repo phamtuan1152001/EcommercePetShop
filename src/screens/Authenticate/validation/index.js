@@ -9,9 +9,6 @@ export const validationSchema = yup.object().shape({
     .nullable()
     .email("Please enter a valid email")
     .required("Email address is Required"),
-  password: yup
-    .string()
-    .nullable()
-    .required("Password is required")
-    .matches(phoneRegex, "Please enter a valid password"),
+  password: yup.string().nullable().required("Password is required"),
+  // .matches(phoneRegex, "Please enter a valid password"),
 });

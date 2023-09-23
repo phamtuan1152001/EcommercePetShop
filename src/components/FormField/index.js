@@ -18,7 +18,7 @@ const FormField = ({
   const error = errors[field];
   const touch = touched[field];
 
-  const ErrorField = error && (
+  const ErrorField = touch && (
     <Text style={{ color: "red", paddingTop: 10 }}>{error}</Text>
   );
 
