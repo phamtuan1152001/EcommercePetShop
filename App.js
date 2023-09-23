@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // @components
 import Login from "./src/screens/Authenticate/Page/Login";
-import Homepage from "./src/screens/Home/Homepage";
+import Homepage from "./src/screens/Home/Page/Homepage";
+import ProductPage from "./src/screens/Products/Page/ProductPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const Stack = createNativeStackNavigator();
 //     />
 //   );
 // };
+
 // const ProfileScreen = ({ navigation, route }) => {
 //   return <Text>This is {route.params.name}'s profile</Text>;
 // };
@@ -26,11 +28,20 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Home"
+          component={Homepage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Product"
+          component={ProductPage}
+          options={{ headerShown: false }}
+        />
+        {/* <Stack.Screen
           name="Login"
           component={Login}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen name="Home" component={Homepage} />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
