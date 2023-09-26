@@ -1,24 +1,38 @@
 import { style } from "../style";
 
 import React from "react";
-import {
-  Text,
-  View,
-  Button,
-  Image,
-  ScrollView,
-  Dimensions,
-} from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 
-const TypeItem = ({ name, image, color, cover }) => {
+const TypeItem = ({
+  id,
+  name,
+  image,
+  color,
+  cover,
+  activeType,
+  handleActiveType = () => {},
+}) => {
+  // console.log("id", id);
   return (
-    <View style={style.homeWrapperBodyHeaderTypeBoxOutside}>
-      <View style={style.homeWrapperBodyHeaderTypeBoxInside}>
+    <View
+      key={id}
+      style={[
+        style.homeWrapperBodyHeaderTypeBoxOutside,
+        { borderColor: color, opacity: activeType === id ? 1 : 0.5 },
+      ]}
+    >
+      <TouchableOpacity
+        style={[
+          style.homeWrapperBodyHeaderTypeBoxInside,
+          { backgroundColor: cover },
+        ]}
+        onPress={() => handleActiveType(id)}
+      >
         <Image source={image} />
         <Text style={style.homeWrapperBodyHeaderTypeBoxInsideTitle}>
           {name}
         </Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };

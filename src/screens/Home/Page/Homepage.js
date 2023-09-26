@@ -1,7 +1,7 @@
 import { style } from "../style";
 
-import React from "react";
-import { Text, View, Button, Image, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { Text, View, Image, ScrollView } from "react-native";
 
 // @image and icon
 import { IconHamburgerMenu, IconArrowDown } from "../assets/svg";
@@ -14,6 +14,8 @@ import Samosa from "../assets/image/foodImage/Samosa.png";
 import TypeItem from "../Components/TypeItem";
 
 const Homepage = ({ navigation }) => {
+  const [activeType, setActiveType] = useState(0);
+
   const listType = [
     {
       id: 1,
@@ -44,17 +46,6 @@ const Homepage = ({ navigation }) => {
       cover: "#F0E3C1",
     },
   ];
-
-  const renderTypeFood = ({ item, index }) => {
-    return (
-      <TypeItem
-        name={item.name}
-        image={item.image}
-        color={item.color}
-        cover={item.cover}
-      />
-    );
-  };
 
   return (
     <View style={style.homeWrapper}>
@@ -88,18 +79,24 @@ const Homepage = ({ navigation }) => {
           <Text style={style.homeWrapperBodyHeaderTitle}>
             Enjoy Delicious food
           </Text>
-          <View style={style.homeWrapperBodyHeaderType}>
-            {/* <Carousel
-              layout={"default"}
-              // layoutCardOffset={`200`}
-              ref={isCarousel}
-              data={listType}
-              sliderWidth={500}
-              itemWidth={30}
-              renderItem={renderTypeFood}
-              onSnapToItem={(index) => console.log("index", index)}
-            /> */}
-          </View>
+          <ScrollView
+            contentContainerStyle={style.homeWrapperBodyHeaderType}
+            horizontal={true}
+          >
+            {listType.map((item, index) => {
+              return (
+                <TypeItem
+                  id={index}
+                  name={item.name}
+                  image={item.image}
+                  color={item.color}
+                  cover={item.cover}
+                  activeType={activeType}
+                  handleActiveType={setActiveType}
+                />
+              );
+            })}
+          </ScrollView>
         </View>
       </View>
     </View>
