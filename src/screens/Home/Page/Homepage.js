@@ -85,15 +85,17 @@ const Homepage = ({ navigation }) => {
           >
             {listType.map((item, index) => {
               return (
-                <TypeItem
-                  id={index}
-                  name={item.name}
-                  image={item.image}
-                  color={item.color}
-                  cover={item.cover}
-                  activeType={activeType}
-                  handleActiveType={setActiveType}
-                />
+                <View key={index}>
+                  <TypeItem
+                    id={index}
+                    name={item.name}
+                    image={item.image}
+                    color={item.color}
+                    cover={item.cover}
+                    activeType={activeType}
+                    handleActiveType={setActiveType}
+                  />
+                </View>
               );
             })}
           </ScrollView>

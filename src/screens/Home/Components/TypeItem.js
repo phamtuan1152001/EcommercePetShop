@@ -15,7 +15,7 @@ const TypeItem = ({
   // console.log("id", id);
   return (
     <View
-      key={id}
+      // key={id}
       style={[
         style.homeWrapperBodyHeaderTypeBoxOutside,
         { borderColor: color, opacity: activeType === id ? 1 : 0.5 },
