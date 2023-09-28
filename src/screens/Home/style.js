@@ -87,7 +87,7 @@ export const style = StyleSheet.create({
     fontSize: 24,
     fontWeight: "700",
     lineHeight: 31,
-    marginVertical: 35,
+    marginVertical: 40,
   },
   homeWrapperBodyHeaderType: {
     display: "flex",
@@ -120,6 +120,29 @@ export const style = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 18,
     color: "#000000",
+  },
+  homeWrapperBodyContent: {
+    // backgroundColor: "red",
+  },
+  homeWrapperBodyContentTop: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginVertical: 40,
+  },
+  homeWrapperBodyContentTopLeft: {
+    fontWeight: "700",
+    fontSize: 16,
+    lineHeight: 21,
+    color: "#3D3D3D",
+  },
+  homeWrapperBodyContentTopRight: {
+    fontWeight: "400",
+    fontSize: 14,
+    lineHeight: 21,
+    color: "#FE554A",
+    textDecorationLine: "underline",
   },
   /* End of Body */
 });

@@ -100,6 +100,16 @@ const Homepage = ({ navigation }) => {
             })}
           </ScrollView>
         </View>
+        <View style={style.homeWrapperBodyContent}>
+          <View style={style.homeWrapperBodyContentTop}>
+            <Text style={style.homeWrapperBodyContentTopLeft}>
+              Popular restaurants
+            </Text>
+            <Text style={style.homeWrapperBodyContentTopRight}>
+              View all(29)
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   );
