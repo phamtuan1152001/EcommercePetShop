@@ -4,48 +4,26 @@ import React, { useState } from "react";
 import { Text, View, Image, ScrollView } from "react-native";
 
 // @image and icon
-import { IconHamburgerMenu, IconArrowDown } from "../assets/svg";
-import Pizza from "../assets/image/foodImage/Pizza.png";
-import Burger from "../assets/image/foodImage/Burger.png";
-import Sausage from "../assets/image/foodImage/Sausage.png";
-import Samosa from "../assets/image/foodImage/Samosa.png";
+import {
+  IconHamburgerMenu,
+  IconArrowDown,
+  HomeIcon,
+  HeartIcon,
+  NotiIcon,
+  CartIcon,
+} from "../assets/svg";
+import SearhIcon from "../assets/image/SearchIcon.png";
+
+// @constant
+import { listType, list } from "../configs/constant";
 
 // @components
 import TypeItem from "../Components/TypeItem";
+import ProductItem from "../Components/ProductItem";
 
-const Homepage = ({ navigation }) => {
+const Homepage = ({ navigation, route }) => {
   const [activeType, setActiveType] = useState(0);
-
-  const listType = [
-    {
-      id: 1,
-      name: "Pizza",
-      image: Pizza,
-      color: "#F0CAC1",
-      cover: "#F0CCC1",
-    },
-    {
-      id: 2,
-      name: "Burger",
-      image: Burger,
-      color: "#3EC032",
-      cover: "#A9E88B",
-    },
-    {
-      id: 3,
-      name: "Sausage",
-      image: Sausage,
-      color: "#C1DAF0",
-      cover: "#C1DAF0",
-    },
-    {
-      id: 4,
-      name: "Samosa",
-      image: Samosa,
-      color: "#F0E3C1",
-      cover: "#F0E3C1",
-    },
-  ];
+  console.log("listProducts", route.name);
 
   return (
     <View style={style.homeWrapper}>
@@ -74,7 +52,7 @@ const Homepage = ({ navigation }) => {
           />
         </View>
       </View>
-      <View style={style.homeWrapperBody}>
+      <ScrollView style={style.homeWrapperBody}>
         <View style={style.homeWrapperBodyHeader}>
           <Text style={style.homeWrapperBodyHeaderTitle}>
             Enjoy Delicious food
@@ -108,6 +86,87 @@ const Homepage = ({ navigation }) => {
             <Text style={style.homeWrapperBodyContentTopRight}>
               View all(29)
             </Text>
+          </View>
+          <ScrollView
+            contentContainerStyle={style.homeWrapperBodyContentBottom}
+            horizontal={true}
+          >
+            {list?.map((item, index) => {
+              return (
+                <View key={index} style={style.homeWrapperBodyContentBottomBox}>
+                  <ProductItem item={item} />
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
+        <View style={style.homeWrapperBodyContent}>
+          <View style={style.homeWrapperBodyContentTop}>
+            <Text style={style.homeWrapperBodyContentTopLeft}>
+              Popular restaurants
+            </Text>
+            <Text style={style.homeWrapperBodyContentTopRight}>
+              View all(29)
+            </Text>
+          </View>
+          <ScrollView
+            contentContainerStyle={style.homeWrapperBodyContentBottom}
+            horizontal={true}
+          >
+            {list?.map((item, index) => {
+              return (
+                <View key={index} style={style.homeWrapperBodyContentBottomBox}>
+                  <ProductItem item={item} />
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
+        <View style={style.homeWrapperBodyContent}>
+          <View style={style.homeWrapperBodyContentTop}>
+            <Text style={style.homeWrapperBodyContentTopLeft}>
+              Popular restaurants
+            </Text>
+            <Text style={style.homeWrapperBodyContentTopRight}>
+              View all(29)
+            </Text>
+          </View>
+          <ScrollView
+            contentContainerStyle={style.homeWrapperBodyContentBottom}
+            horizontal={true}
+          >
+            {list?.map((item, index) => {
+              return (
+                <View key={index} style={style.homeWrapperBodyContentBottomBox}>
+                  <ProductItem item={item} />
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
+      </ScrollView>
+      <View style={{ marginBottom: 20 }} />
+      <View style={style.homeWrapperFooter}>
+        <View style={style.homeWrapperFooterBox}>
+          <View style={style.homeWrapperFooterBoxIcon}>
+            <HomeIcon />
+          </View>
+          <View style={style.homeWrapperFooterBoxIcon}>
+            <HeartIcon />
+          </View>
+        </View>
+        <View style={style.searchBoxItem}>
+          <View style={style.searchBox} />
+        </View>
+        <View style={style.homeWrapperFooterBoxSearch}>
+          <Image source={SearhIcon} />
+        </View>
+        <View style={style.homeWrapperFooterBox}>
+          <View style={style.homeWrapperFooterBoxIcon}>
+            <NotiIcon />
+          </View>
+          <View style={style.homeWrapperFooterBoxIcon}>
+            <CartIcon />
           </View>
         </View>
       </View>

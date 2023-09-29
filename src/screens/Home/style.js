@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
   homeWrapper: {
-    paddingVertical: 35,
+    paddingTop: 30,
     paddingHorizontal: 20,
     height: "100%",
     backgroundColor: "#F8FBFF",
@@ -13,7 +13,7 @@ export const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    // backgroundColor: "red",
+    // backgroundColor: "green",
   },
   homeWrapperHeaderLeft: {
     width: 40,
@@ -77,6 +77,8 @@ export const style = StyleSheet.create({
   /* Body */
   homeWrapperBody: {
     // backgroundColor: "red",
+    // marginBottom: 100,
+    height: "100%",
   },
   homeWrapperBodyHeader: {
     // style here
@@ -87,7 +89,7 @@ export const style = StyleSheet.create({
     fontSize: 24,
     fontWeight: "700",
     lineHeight: 31,
-    marginVertical: 40,
+    marginVertical: 20,
   },
   homeWrapperBodyHeaderType: {
     display: "flex",
@@ -129,7 +131,7 @@ export const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginVertical: 40,
+    marginVertical: 20,
   },
   homeWrapperBodyContentTopLeft: {
     fontWeight: "700",
@@ -144,5 +146,115 @@ export const style = StyleSheet.create({
     color: "#FE554A",
     textDecorationLine: "underline",
   },
+  homeWrapperBodyContentBottom: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 35,
+  },
+  homeWrapperBodyContentBottomBox: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 30,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    width: 220,
+    // height: 260,
+    padding: 16,
+  },
+  BottomBoxImg: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  homeWrapperBodyContentBottomBoxName: {
+    fontWeight: "500",
+    fontSize: 16,
+    lineHeight: 21,
+    color: "#3D3D3D",
+    marginTop: 15,
+    marginBottom: 5,
+  },
+  homeWrapperBodyContentBottomBoxDes: {
+    fontWeight: "400",
+    fontSize: 12,
+    lineHeight: 18,
+    color: "#3D3D3D",
+    marginBottom: 12,
+  },
+  homeWrapperBodyContentBottomFooter: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  homeWrapperBodyContentBottomFooterRate: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 5,
+  },
+  homeWrapperBodyContentBottomFooterRateText: {
+    fontWeight: "400",
+    fontSize: 13,
+    lineHeight: 18,
+    color: "#3D3D3D",
+  },
   /* End of Body */
+  /* Footer */
+  homeWrapperFooter: {
+    backgroundColor: "#FFFFFF",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: 20,
+    paddingBottom: 40,
+    paddingHorizontal: 30,
+    marginTop: 20,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    position: "relative",
+  },
+  homeWrapperFooterBox: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 40,
+  },
+  homeWrapperFooterBoxIcon: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  homeWrapperFooterBoxSearch: {
+    position: "absolute",
+    top: -50,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  searchBoxItem: {
+    position: "absolute",
+    top: -80,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  searchBox: {
+    width: 60,
+    height: 60,
+    backgroundColor: "#faf8f7",
+    borderRadius: 60,
+  },
+  /* End of Footer */
 });
