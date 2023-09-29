@@ -7,6 +7,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./src/screens/Authenticate/Page/Login";
 import Homepage from "./src/screens/Home/Page/Homepage";
 import ProductPage from "./src/screens/Products/Page/ProductPage";
+import FavouritePage from "./src/screens/Favourite/Page/FavouritePage";
+import NotificationPage from "./src/screens/Notification/Page/NotificationPage";
+import CartPage from "./src/screens/Cart/Page/CartPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +39,21 @@ export default function App() {
           name="Product"
           component={ProductPage}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Heart"
+          component={FavouritePage}
+          options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="Noti"
+          component={NotificationPage}
+          options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={CartPage}
+          options={{ headerShown: true }}
         />
         {/* <Stack.Screen
           name="Login"

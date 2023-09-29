@@ -1,18 +1,10 @@
 import { style } from "../style";
 
 import React, { useState } from "react";
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, Pressable } from "react-native";
 
 // @image and icon
-import {
-  IconHamburgerMenu,
-  IconArrowDown,
-  HomeIcon,
-  HeartIcon,
-  NotiIcon,
-  CartIcon,
-} from "../assets/svg";
-import SearhIcon from "../assets/image/SearchIcon.png";
+import { IconHamburgerMenu, IconArrowDown } from "../assets/svg";
 
 // @constant
 import { listType, list } from "../configs/constant";
@@ -20,10 +12,11 @@ import { listType, list } from "../configs/constant";
 // @components
 import TypeItem from "../Components/TypeItem";
 import ProductItem from "../Components/ProductItem";
+import Navigation from "../../../components/Navigation";
 
 const Homepage = ({ navigation, route }) => {
   const [activeType, setActiveType] = useState(0);
-  console.log("listProducts", route.name);
+  // console.log("listProducts", route.name);
 
   return (
     <View style={style.homeWrapper}>
@@ -146,30 +139,7 @@ const Homepage = ({ navigation, route }) => {
         </View>
       </ScrollView>
       <View style={{ marginBottom: 20 }} />
-      <View style={style.homeWrapperFooter}>
-        <View style={style.homeWrapperFooterBox}>
-          <View style={style.homeWrapperFooterBoxIcon}>
-            <HomeIcon />
-          </View>
-          <View style={style.homeWrapperFooterBoxIcon}>
-            <HeartIcon />
-          </View>
-        </View>
-        <View style={style.searchBoxItem}>
-          <View style={style.searchBox} />
-        </View>
-        <View style={style.homeWrapperFooterBoxSearch}>
-          <Image source={SearhIcon} />
-        </View>
-        <View style={style.homeWrapperFooterBox}>
-          <View style={style.homeWrapperFooterBoxIcon}>
-            <NotiIcon />
-          </View>
-          <View style={style.homeWrapperFooterBoxIcon}>
-            <CartIcon />
-          </View>
-        </View>
-      </View>
+      <Navigation navigation={navigation} route={route} />
     </View>
   );
 };
