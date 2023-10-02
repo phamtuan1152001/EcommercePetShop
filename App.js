@@ -1,8 +1,13 @@
 import * as React from "react";
 import { StatusBar, SafeAreaView } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useRoute } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { navigationRef } from "./src/routes/RootNavigation";
+import * as RootNavigation from "./src/routes/RootNavigation";
+// import {
+//   isMountedRef,
+//   navigate,
+//   navigationRef,
+// } from "./src/routes/RootNavigation";
 
 // @components
 import Header from "./src/components/Header";
@@ -19,22 +24,28 @@ import CartPage from "./src/screens/Cart/Page/CartPage";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [refVisible, setRefVisible] = React.useState(false);
+  const [routeRef, setRouteRef] = React.useState();
+  const checkRouteRef = (refData) => {
+    if (refData) setRouteRef(RootNavigation.navigationRef);
+    else setRouteRef(null);
+  };
+
   React.useEffect(() => {
-    if (!refVisible) {
-      return;
-    }
-    // detected rendering
-  }, [refVisible]);
+    // console.log("APP EFFECT");
+    RootNavigation.isMountedRef.current = true;
+    checkRouteRef(RootNavigation.navigationRef);
+    // navigate(ROUTE_DETAILS)
+
+    return () => (RootNavigation.isMountedRef.current = false);
+  }, [routeRef]);
+
+  // console.log("data", {
+  //   isMountedRef: RootNavigation.isMountedRef,
+  //   navigationRef: RootNavigation.navigationRef,
+  // });
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FBFF" }}>
-      <NavigationContainer
-        ref={(el) => {
-          // console.log("el", el);
-          navigationRef.current = el;
-          setRefVisible(!!el);
-        }}
-      >
+      <NavigationContainer ref={RootNavigation.navigationRef}>
         <React.Fragment>
           <Header />
           <Stack.Navigator>
@@ -69,7 +80,7 @@ export default function App() {
           options={{ headerShown: false }}
         /> */}
           </Stack.Navigator>
-          <Navigation />
+          <Navigation navigation={RootNavigation} route={routeRef} />
         </React.Fragment>
       </NavigationContainer>
       <StatusBar
