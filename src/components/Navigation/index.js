@@ -2,9 +2,7 @@ import { style } from "./style";
 
 import React from "react";
 import { View, Image, Pressable } from "react-native";
-import * as RootNavigation from "../../routes/RootNavigation";
-import { navigationRef } from "../../routes/RootNavigation";
-// import { useRoute } from "@react-navigation/native";
+
 // @image and icon
 import {
   HomeIcon,
@@ -18,28 +16,20 @@ import {
 } from "../../assets/svg";
 import SearhIcon from "../../assets/image/SearchIcon.png";
 
-const Navigation = ({ navigation = () => {}, route }) => {
-  // console.log("test in navigation", route?.current?.getCurrentRoute());
-  const handleData = (test) => {
-    if (!!test) return route?.current?.getCurrentRoute()?.name;
-    else return "";
-  };
-  // const { name } = route?.current?.getCurrentRoute();
+const Navigation = ({ navigation = () => {}, navRef = {} }) => {
+  // console.log("navRef", navRef);
+
   return (
     <View style={style.homeWrapperFooter}>
       <View style={style.homeWrapperFooterBox}>
         <Pressable
           onPress={() => {
-            // console.log("GO TO HOME");
+            console.log("GO TO HOME");
             navigation.navigate("Home");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {handleData(route?.current?.getCurrentRoute()) === "Home" ? (
-              <HomeIconActive />
-            ) : (
-              <HomeIcon />
-            )}
+            {navRef.name === "Home" ? <HomeIconActive /> : <HomeIcon />}
           </View>
         </Pressable>
         <Pressable
@@ -49,11 +39,7 @@ const Navigation = ({ navigation = () => {}, route }) => {
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {handleData(route?.current?.getCurrentRoute()) === "Heart" ? (
-              <HeartIconActive />
-            ) : (
-              <HeartIcon />
-            )}
+            {navRef.name === "Heart" ? <HeartIconActive /> : <HeartIcon />}
           </View>
         </Pressable>
       </View>
@@ -71,11 +57,7 @@ const Navigation = ({ navigation = () => {}, route }) => {
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {handleData(route?.current?.getCurrentRoute()) === "Noti" ? (
-              <NotiIconActive />
-            ) : (
-              <NotiIcon />
-            )}
+            {navRef.name === "Noti" ? <NotiIconActive /> : <NotiIcon />}
           </View>
         </Pressable>
         <Pressable
@@ -85,11 +67,7 @@ const Navigation = ({ navigation = () => {}, route }) => {
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {handleData(route?.current?.getCurrentRoute()) === "Cart" ? (
-              <CartIconActive />
-            ) : (
-              <CartIcon />
-            )}
+            {navRef.name === "Cart" ? <CartIconActive /> : <CartIcon />}
           </View>
         </Pressable>
       </View>
