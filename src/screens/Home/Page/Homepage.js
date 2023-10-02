@@ -20,31 +20,6 @@ const Homepage = ({ navigation, route }) => {
 
   return (
     <View style={style.homeWrapper}>
-      <View style={style.homeWrapperHeader}>
-        <View style={style.homeWrapperHeaderLeft}>
-          <IconHamburgerMenu />
-        </View>
-        <View style={style.homeWrapperHeaderCenter}>
-          <View style={style.homeWrapperHeaderCenterTop}>
-            <Text style={style.homeWrapperHeaderCenterTopTitle}>
-              Delivery to
-            </Text>
-            <View style={style.homeWrapperHeaderCenterTopIcon}>
-              <IconArrowDown />
-            </View>
-          </View>
-          <Text style={style.homeWrapperHeaderCenterBottom}>
-            lekki phase 1, Estate
-          </Text>
-        </View>
-        <View style={style.homeWrapperHeaderRight}>
-          <Image
-            source={require("../assets/image/IconUser1.png")}
-            width={18}
-            height={23}
-          />
-        </View>
-      </View>
       <ScrollView style={style.homeWrapperBody}>
         <View style={style.homeWrapperBodyHeader}>
           <Text style={style.homeWrapperBodyHeaderTitle}>
@@ -139,7 +114,7 @@ const Homepage = ({ navigation, route }) => {
         </View>
       </ScrollView>
       <View style={{ marginBottom: 20 }} />
-      <Navigation navigation={navigation} route={route} />
+      {/* <Navigation navigation={navigation} route={route} /> */}
     </View>
   );
 };

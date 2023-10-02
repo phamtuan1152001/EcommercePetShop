@@ -1,8 +1,9 @@
 import { style } from "./style";
 
 import React from "react";
-import { Text, View, Image, ScrollView, Pressable } from "react-native";
-
+import { View, Image, Pressable } from "react-native";
+import * as RootNavigation from "../../routes/RootNavigation";
+import { navigationRef } from "../../routes/RootNavigation";
 // @image and icon
 import {
   HomeIcon,
@@ -16,56 +17,60 @@ import {
 } from "../../assets/svg";
 import SearhIcon from "../../assets/image/SearchIcon.png";
 
-const Navigation = ({ navigation, route }) => {
+const Navigation = () => {
+  const routeName = RootNavigation.navigationRef.current
+    ? RootNavigation.navigationRef.current.getCurrentRoute()
+    : undefined;
+  console.log("test", routeName);
   return (
     <View style={style.homeWrapperFooter}>
       <View style={style.homeWrapperFooterBox}>
         <Pressable
           onPress={() => {
             console.log("GO TO HOME");
-            navigation.navigate("Home");
+            RootNavigation.navigate("Home");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {route.name === "Home" ? <HomeIconActive /> : <HomeIcon />}
+            {routeName?.name === "Home" ? <HomeIconActive /> : <HomeIcon />}
           </View>
         </Pressable>
         <Pressable
           onPress={() => {
             console.log("GO TO HEART");
-            navigation.navigate("Heart");
+            RootNavigation.navigate("Heart");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {route.name === "Heart" ? <HeartIconActive /> : <HeartIcon />}
+            {routeName?.name === "Heart" ? <HeartIconActive /> : <HeartIcon />}
           </View>
         </Pressable>
       </View>
       {/* <View style={style.searchBoxItem}>
         <View style={style.searchBox} />
-      </View>
-      <View style={style.homeWrapperFooterBoxSearch}>
+      </View> */}
+      {/* <View style={style.homeWrapperFooterBoxSearch}>
         <Image source={SearhIcon} />
       </View> */}
       <View style={style.homeWrapperFooterBox}>
         <Pressable
           onPress={() => {
             console.log("GO TO NOTI");
-            navigation.navigate("Noti");
+            RootNavigation.navigate("Noti");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {route.name === "Noti" ? <NotiIconActive /> : <NotiIcon />}
+            {routeName?.name === "Noti" ? <NotiIconActive /> : <NotiIcon />}
           </View>
         </Pressable>
         <Pressable
           onPress={() => {
             console.log("GO TO CART");
-            navigation.navigate("Cart");
+            RootNavigation.navigate("Cart");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {route.name === "Cart" ? <CartIconActive /> : <CartIcon />}
+            {routeName?.name === "Cart" ? <CartIconActive /> : <CartIcon />}
           </View>
         </Pressable>
       </View>

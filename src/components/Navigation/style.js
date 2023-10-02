@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
   homeWrapperFooter: {
+    // backgroundColor: "pink",
     backgroundColor: "#FFFFFF",
     display: "flex",
     flexDirection: "row",

@@ -8,7 +8,7 @@ const CartPage = ({ navigation, route }) => {
   return (
     <View>
       <Text>This is CartPage page</Text>
-      <Navigation navigation={navigation} route={route} />
+      {/* <Navigation navigation={navigation} route={route} /> */}
     </View>
   );
 };

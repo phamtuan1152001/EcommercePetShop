@@ -8,7 +8,7 @@ const NotificationPage = ({ navigation, route }) => {
   return (
     <View>
       <Text>This is NotificationPage page</Text>
-      <Navigation navigation={navigation} route={route} />
+      {/* <Navigation navigation={navigation} route={route} /> */}
     </View>
   );
 };

@@ -9,7 +9,7 @@ const FavouritePage = ({ navigation, route }) => {
   return (
     <View>
       <Text>This is FavouritePage page</Text>
-      <Navigation navigation={navigation} route={route} />
+      {/* <Navigation navigation={navigation} route={route} /> */}
     </View>
   );
 };
