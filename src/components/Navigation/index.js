@@ -16,30 +16,26 @@ import {
 } from "../../assets/svg";
 import SearhIcon from "../../assets/image/SearchIcon.png";
 
-const Navigation = ({ navigation = () => {}, navRef = {} }) => {
-  // console.log("navRef", navRef);
-
+const Navigation = ({ navigation = () => {}, navRef = {}, route }) => {
   return (
     <View style={style.homeWrapperFooter}>
       <View style={style.homeWrapperFooterBox}>
         <Pressable
           onPress={() => {
-            console.log("GO TO HOME");
             navigation.navigate("Home");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {navRef.name === "Home" ? <HomeIconActive /> : <HomeIcon />}
+            {route === "Home" ? <HomeIconActive /> : <HomeIcon />}
           </View>
         </Pressable>
         <Pressable
           onPress={() => {
-            // console.log("GO TO HEART");
             navigation.navigate("Heart");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {navRef.name === "Heart" ? <HeartIconActive /> : <HeartIcon />}
+            {route === "Heart" ? <HeartIconActive /> : <HeartIcon />}
           </View>
         </Pressable>
       </View>
@@ -52,22 +48,20 @@ const Navigation = ({ navigation = () => {}, navRef = {} }) => {
       <View style={style.homeWrapperFooterBox}>
         <Pressable
           onPress={() => {
-            // console.log("GO TO NOTI");
             navigation.navigate("Noti");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {navRef.name === "Noti" ? <NotiIconActive /> : <NotiIcon />}
+            {route === "Noti" ? <NotiIconActive /> : <NotiIcon />}
           </View>
         </Pressable>
         <Pressable
           onPress={() => {
-            // console.log("GO TO CART");
             navigation.navigate("Cart");
           }}
         >
           <View style={style.homeWrapperFooterBoxIcon}>
-            {navRef.name === "Cart" ? <CartIconActive /> : <CartIcon />}
+            {route === "Cart" ? <CartIconActive /> : <CartIcon />}
           </View>
         </Pressable>
       </View>

@@ -20,14 +20,24 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [navRef, setNavRef] = React.useState();
+  const [tabName, setTabName] = React.useState("Home");
+
   const navigationRef = React.useCallback((node) => {
     if (node !== null) {
       setNavRef(node);
     }
   }, []);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FBFF" }}>
-      <NavigationContainer ref={navigationRef}>
+      <NavigationContainer
+        ref={navigationRef}
+        onStateChange={(item) => {
+          // console.log("item", item);
+          const { routes, index } = item || {};
+          setTabName(routes[index].name);
+        }}
+      >
         <Header />
         <Stack.Navigator>
           <Stack.Screen
@@ -61,7 +71,11 @@ export default function App() {
           options={{ headerShown: false }}
         /> */}
         </Stack.Navigator>
-        <Navigation navigation={navRef} navRef={navRef?.getCurrentRoute()} />
+        <Navigation
+          navigation={navRef}
+          navRef={navRef?.getCurrentRoute()}
+          route={tabName}
+        />
       </NavigationContainer>
       <StatusBar
         animated={true}
