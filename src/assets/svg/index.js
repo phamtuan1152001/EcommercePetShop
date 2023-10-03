@@ -1,4 +1,220 @@
-import Svg, { Line, Path } from "react-native-svg";
+import Svg, { Line, Path, Circle } from "react-native-svg";
+
+export const IconPrivacy = (props) => {
+  return (
+    <Svg
+      width="18"
+      height="20"
+      viewBox="0 0 18 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M11.7379 0.761748H5.08493C3.00493 0.753748 1.29993 2.41175 1.25093 4.49075V15.2037C1.20493 17.3167 2.87993 19.0677 4.99293 19.1147C5.02393 19.1147 5.05393 19.1157 5.08493 19.1147H13.0739C15.1679 19.0297 16.8179 17.2997 16.8029 15.2037V6.03775L11.7379 0.761748Z"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M11.4751 0.75V3.659C11.4751 5.079 12.6231 6.23 14.0431 6.234H16.7981"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M11.2882 13.3584H5.88818"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M9.24321 9.60596H5.88721"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const IconChat = (props) => {
+  return (
+    <Svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.0714 18.0699C15.0152 21.1263 10.4898 21.7867 6.78642 20.074C6.23971 19.8539 5.79148 19.676 5.36537 19.676C4.17849 19.683 2.70117 20.8339 1.93336 20.067C1.16555 19.2991 2.31726 17.8206 2.31726 16.6266C2.31726 16.2004 2.14642 15.7602 1.92632 15.2124C0.212831 11.5096 0.874109 6.98269 3.93026 3.92721C7.8316 0.0244319 14.17 0.0244322 18.0714 3.9262C21.9797 7.83501 21.9727 14.1681 18.0714 18.0699Z"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M14.9393 11.4131H14.9483"
+        stroke="#130F26"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M10.9306 11.4131H10.9396"
+        stroke="#130F26"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M6.92128 11.4131H6.93028"
+        stroke="#130F26"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const IconSetting = (props) => {
+  return (
+    <Svg
+      width="20"
+      height="22"
+      viewBox="0 0 20 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.8064 6.62337L18.184 5.54328C17.6574 4.62936 16.4905 4.31408 15.5753 4.83847V4.83847C15.1397 5.0951 14.6198 5.16791 14.1305 5.04084C13.6411 4.91378 13.2224 4.59727 12.9666 4.16113C12.8021 3.8839 12.7137 3.56815 12.7103 3.2458V3.2458C12.7251 2.72898 12.5302 2.22816 12.1698 1.85743C11.8094 1.48669 11.3143 1.27762 10.7973 1.27783H9.54326C9.03672 1.27783 8.55107 1.47967 8.19376 1.8387C7.83644 2.19773 7.63693 2.68435 7.63937 3.19088V3.19088C7.62435 4.23668 6.77224 5.07657 5.72632 5.07646C5.40397 5.07311 5.08821 4.9847 4.81099 4.82017V4.82017C3.89582 4.29577 2.72887 4.61105 2.20229 5.52497L1.5341 6.62337C1.00817 7.53615 1.31916 8.70236 2.22975 9.23207V9.23207C2.82166 9.5738 3.18629 10.2053 3.18629 10.8888C3.18629 11.5723 2.82166 12.2038 2.22975 12.5456V12.5456C1.32031 13.0717 1.00898 14.2351 1.5341 15.1451V15.1451L2.16568 16.2344C2.4124 16.6795 2.82636 17.0081 3.31595 17.1472C3.80554 17.2863 4.3304 17.2247 4.77438 16.9758V16.9758C5.21084 16.7211 5.73094 16.6513 6.2191 16.782C6.70725 16.9126 7.12299 17.2328 7.37392 17.6714C7.53845 17.9486 7.62686 18.2644 7.63021 18.5868V18.5868C7.63021 19.6433 8.48671 20.4998 9.54326 20.4998H10.7973C11.8502 20.4998 12.7053 19.6489 12.7103 18.5959V18.5959C12.7079 18.0878 12.9086 17.5998 13.2679 17.2405C13.6272 16.8812 14.1152 16.6804 14.6233 16.6829C14.9449 16.6915 15.2594 16.7795 15.5387 16.9392V16.9392C16.4515 17.4651 17.6177 17.1541 18.1474 16.2435V16.2435L18.8064 15.1451C19.0615 14.7073 19.1315 14.1858 19.001 13.6961C18.8704 13.2065 18.55 12.7891 18.1108 12.5364V12.5364C17.6715 12.2837 17.3511 11.8663 17.2206 11.3767C17.09 10.8871 17.16 10.3656 17.4151 9.92772C17.581 9.63809 17.8211 9.39795 18.1108 9.23207V9.23207C19.0159 8.70265 19.3262 7.54325 18.8064 6.63252V6.63252V6.62337Z"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Circle
+        cx="10.1747"
+        cy="10.8886"
+        r="2.63616"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const IconPayment = (props) => {
+  return (
+    <Svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        d="M9.99512 14.6771V12.1401"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M16.19 3.33057C17.88 3.33057 19.24 4.70057 19.24 6.39057V9.83057C16.78 11.2706 13.53 12.1406 9.99 12.1406C6.45 12.1406 3.21 11.2706 0.75 9.83057V6.38057C0.75 4.69057 2.12 3.33057 3.81 3.33057H16.19Z"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M13.4951 3.326V2.96C13.4951 1.74 12.5051 0.75 11.2851 0.75H8.70512C7.48512 0.75 6.49512 1.74 6.49512 2.96V3.326"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M0.774414 13.4834L0.963414 15.9924C1.09141 17.6834 2.50041 18.9904 4.19541 18.9904H15.7944C17.4894 18.9904 18.8984 17.6834 19.0264 15.9924L19.2154 13.4834"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const IconProfile = (props) => {
+  return (
+    <Svg
+      width="16"
+      height="20"
+      viewBox="0 0 16 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.98493 13.3462C4.11731 13.3462 0.814453 13.931 0.814453 16.2729C0.814453 18.6148 4.09636 19.2205 7.98493 19.2205C11.8525 19.2205 15.1545 18.6348 15.1545 16.2938C15.1545 13.9529 11.8735 13.3462 7.98493 13.3462Z"
+        stroke="#130F26"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.98489 10.0059C10.523 10.0059 12.5801 7.94779 12.5801 5.40969C12.5801 2.8716 10.523 0.814453 7.98489 0.814453C5.44679 0.814453 3.3887 2.8716 3.3887 5.40969C3.38013 7.93922 5.42394 9.99731 7.95251 10.0059H7.98489Z"
+        stroke="#130F26"
+        stroke-width="1.42857"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const ArrowX = (props) => {
+  return (
+    <Svg
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        d="M1 1L6.5 6.5M12 12L6.5 6.5M6.5 6.5L1 12L12 1"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
 
 export const CartIcon = (props) => {
   return (
