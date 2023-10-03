@@ -5,7 +5,7 @@ export const style = StyleSheet.create({
     backgroundColor: "#F8FBFF",
     height: "100%",
     paddingLeft: 20,
-    marginTop: 20,
+    paddingTop: 10,
   },
   modalWrapperHeader: {
     display: "flex",

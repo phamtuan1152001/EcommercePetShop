@@ -79,7 +79,7 @@ export default function App() {
       </NavigationContainer>
       <StatusBar
         animated={true}
-        backgroundColor="#FFFFFF"
+        backgroundColor="#F8FBFF"
         barStyle={"dark-content"}
       />
     </SafeAreaView>
