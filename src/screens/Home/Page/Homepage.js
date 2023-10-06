@@ -1,10 +1,7 @@
 import { style } from "../style";
 
 import React, { useState } from "react";
-import { Text, View, Image, ScrollView, Pressable } from "react-native";
-
-// @image and icon
-import { IconHamburgerMenu, IconArrowDown } from "../assets/svg";
+import { Text, View, ScrollView } from "react-native";
 
 // @constant
 import { listType, list } from "../configs/constant";
@@ -12,11 +9,14 @@ import { listType, list } from "../configs/constant";
 // @components
 import TypeItem from "../Components/TypeItem";
 import ProductItem from "../Components/ProductItem";
-import Navigation from "../../../components/Navigation";
 
 const Homepage = ({ navigation, route }) => {
   const [activeType, setActiveType] = useState(0);
   // console.log("listProducts", route.name);
+
+  const goToDetailProduct = (item) => {
+    navigation.navigate("Product", item);
+  };
 
   return (
     <View style={style.homeWrapper}>
@@ -62,7 +62,10 @@ const Homepage = ({ navigation, route }) => {
             {list?.map((item, index) => {
               return (
                 <View key={index} style={style.homeWrapperBodyContentBottomBox}>
-                  <ProductItem item={item} />
+                  <ProductItem
+                    item={item}
+                    goToDetailProduct={() => goToDetailProduct(item)}
+                  />
                 </View>
               );
             })}

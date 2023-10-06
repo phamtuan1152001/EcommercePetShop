@@ -1,10 +1,15 @@
-import React from "react";
-import { Text, View } from "react-native";
+import { style } from "../style";
 
-const ProductPage = () => {
+import React from "react";
+import { Text, View, Image } from "react-native";
+
+const ProductPage = ({ navigation, route }) => {
+  const { params } = route || {};
+  console.log("params", params);
   return (
-    <View>
-      <Text>This is Product page</Text>
+    <View style={style.productDetailWrapper}>
+      <Text>This is Product page haha</Text>
+      <Image source={params.img} />
     </View>
   );
 };

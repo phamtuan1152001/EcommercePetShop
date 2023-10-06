@@ -38,7 +38,7 @@ export default function App() {
           setTabName(routes[index].name);
         }}
       >
-        <Header />
+        <Header route={tabName} navigation={navRef} />
         <Stack.Navigator>
           <Stack.Screen
             name="Home"

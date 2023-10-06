@@ -1,5 +1,26 @@
 import Svg, { Line, Path, Circle } from "react-native-svg";
 
+export const IconGoBack = (props) => {
+  return (
+    <Svg
+      width="11"
+      height="15"
+      viewBox="0 0 11 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        d="M9.5 1L1 7.5L9 13.5"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
 export const IconPrivacy = (props) => {
   return (
     <Svg

@@ -7,10 +7,10 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { IconStart } from "../assets/svg";
 import HeartIcon from "../assets/image/HeartIcon.png";
 
-const ProductItem = ({ item }) => {
+const ProductItem = ({ item = {}, goToDetailProduct = () => {} }) => {
   // console.log("item", item);
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => goToDetailProduct()}>
       <View style={style.BottomBoxImg}>
         <Image source={item.img} />
       </View>
