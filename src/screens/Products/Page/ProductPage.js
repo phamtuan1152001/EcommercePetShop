@@ -9,6 +9,10 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+
+// @actions
+import { addItem, deleteItem } from "../../../redux/cart/actions";
 
 // @img and svg
 import BtnNumber from "../assets/image/BtnNumber.png";
@@ -47,6 +51,7 @@ const listTopping = [
 
 const ProductPage = ({ navigation, route }) => {
   const { params } = route || {};
+  const dispatch = useDispatch();
 
   const [activeTopping, setActiveTopping] = React.useState(listTopping[0]);
 
@@ -71,7 +76,7 @@ const ProductPage = ({ navigation, route }) => {
               <Text style={style.productDetailWrapperBoxNumberText}>-</Text>
             </TouchableOpacity>
             <Text style={style.productDetailWrapperBoxNumberText}>2</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => dispatch(addItem(params))}>
               <Text style={style.productDetailWrapperBoxNumberText}>+</Text>
             </TouchableOpacity>
           </ImageBackground>
