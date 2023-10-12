@@ -9,7 +9,7 @@ const addItem = (payload) => {
 };
 
 const deleteItem = (payload) => {
-  console.log("delete", payload);
+  // console.log("delete", payload);
   return {
     type: DELETE_ITEM,
     payload,

@@ -12,7 +12,7 @@ export const cartReducer = (state = initialState, action) => {
         listCart: [...state.listCart, action.payload],
       };
     case DELETE_ITEM:
-    // console.log("delete item", state);
+      console.log("delete item");
     case RESET:
       return initialState;
     default:

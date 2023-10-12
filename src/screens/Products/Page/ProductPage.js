@@ -72,7 +72,7 @@ const ProductPage = ({ navigation, route }) => {
             source={BtnNumber}
             style={style.productDetailWrapperBoxNumberDetail}
           >
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => dispatch(deleteItem(params))}>
               <Text style={style.productDetailWrapperBoxNumberText}>-</Text>
             </TouchableOpacity>
             <Text style={style.productDetailWrapperBoxNumberText}>2</Text>
