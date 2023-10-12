@@ -1,17 +1,27 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 // @components
-import Navigation from "../../../components/Navigation";
+import CartItem from "../Components/CartItem";
 
 const CartPage = ({ navigation, route }) => {
   const listCart = useSelector((state) => state.listCart);
-  console.log("listCart", listCart);
+  console.log("listCart", listCart.length);
   return (
-    <View>
-      <Text>This is CartPage page</Text>
-      {/* <Navigation navigation={navigation} route={route} /> */}
+    <View
+      style={{
+        backgroundColor: "#F8FBFF",
+        height: "100%",
+        paddingHorizontal: 10,
+      }}
+    >
+      <FlatList
+        data={listCart}
+        renderItem={(item) => {
+          return <CartItem data={item} />;
+        }}
+      />
     </View>
   );
 };

@@ -7,12 +7,12 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
-      console.log("add reducer", { state, action });
+      // console.log("add reducer", { state, action });
       return {
         listCart: [...state.listCart, action.payload],
       };
     case DELETE_ITEM:
-      console.log("delete item");
+    // console.log("delete item");
     case RESET:
       return initialState;
     default:
